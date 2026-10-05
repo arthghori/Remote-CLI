@@ -1,7 +1,7 @@
 # Secure Remote CLI
 
 A small educational remote CLI project demonstrating **TCP sockets, TLS encryption, token authentication, allowlisted Windows commands, logging, and PyInstaller packaging**.
-</br>
+</br></br>
 > **Educational Purpose Only:** This project is created strictly for educational purposes and authorized cybersecurity testing on systems you own or have explicit permission to use.
 
 ## Project Overview
@@ -17,6 +17,29 @@ A small educational remote CLI project demonstrating **TCP sockets, TLS encrypti
 | Windows deployment | `client.exe` |
 
 The Windows client is intentionally restricted to predefined commands and does not provide an arbitrary command shell, persistence, credential theft, or security-tool evasion.
+
+## Index
+
+- [Architecture](#architecture)
+- [Repository](#repository)
+- [Output](#output)
+- [1. Project Structure](#1-project-structure)
+- [3. Kali Linux Setup](#3-kali-linux-setup)
+- [4. Generate TLS Certificate](#4-generate-tls-certificate)
+- [5. Generate Authentication Token](#5-generate-authentication-token)
+- [6. Server Configuration](#6-server-configuration)
+- [7. Client Configuration](#7-client-configuration)
+- [8. Start the Kali Server](#8-start-the-kali-server)
+- [9. Test Windows Connectivity](#9-test-windows-connectivity)
+- [10. Test the Python Client](#10-test-the-python-client)
+- [11. Available Commands](#11-available-commands)
+- [12. Build the Windows EXE](#12-build-the-windows-exe)
+- [13. Windows Final Lab Machine](#13-windows-final-lab-machine)
+- [14. Logging](#14-logging)
+- [15. Troubleshooting](#15-troubleshooting)
+- [16. Security Design](#16-security-design)
+- [17. Security Notes](#17-security-notes)
+- [License](#license)
 
 ## Architecture
 
@@ -42,7 +65,7 @@ Example session showing the Kali server and Windows client in action — authent
 
 ![Secure Remote CLI output](https://github.com/user-attachments/assets/9f5e433d-c1ee-4f9d-8c02-e9d998a23cfd)
 
-## Project Structure
+## 1. Project Structure
 
 ### Kali Linux
 
@@ -71,7 +94,7 @@ client/
     └── client.exe
 ```
 
-## 1. Kali Linux Setup
+## 3. Kali Linux Setup
 
 ```bash
 mkdir -p ~/secure-remote-cli/server
@@ -79,7 +102,7 @@ mkdir -p ~/secure-remote-cli/logs
 cd ~/secure-remote-cli/server
 ```
 
-## 2. Generate TLS Certificate
+## 4. Generate TLS Certificate
 
 ```bash
 openssl genrsa -out server.key 2048
@@ -104,7 +127,7 @@ server.key
 
 **Important:** Never copy `server.key` to the Windows client.
 
-## 3. Generate Authentication Token
+## 5. Generate Authentication Token
 
 ```bash
 python3 -c "import secrets; print(secrets.token_urlsafe(32))"
@@ -118,7 +141,7 @@ AUTH_TOKEN = "YOUR_RANDOM_TOKEN"
 
 Do not publish the real token in GitHub.
 
-## 4. Server Configuration
+## 6. Server Configuration
 
 Keep the server listening configuration as:
 
@@ -133,7 +156,7 @@ Find the Kali IP with:
 ip addr
 ```
 
-## 5. Client Configuration
+## 7. Client Configuration
 
 Set the current Kali IP in `client.py`:
 
@@ -152,7 +175,7 @@ SERVER_PORT = 8443
 
 Replace the example with your current Kali IP.
 
-## 6. Start the Kali Server
+## 8. Start the Kali Server
 
 ```bash
 cd ~/secure-remote-cli/server
@@ -181,7 +204,7 @@ Check port `8443`:
 sudo ss -lntp | grep 8443
 ```
 
-## 7. Test Windows Connectivity
+## 9. Test Windows Connectivity
 
 PowerShell:
 
@@ -201,7 +224,7 @@ Expected:
 TcpTestSucceeded : True
 ```
 
-## 8. Test the Python Client
+## 10. Test the Python Client
 
 Before creating the EXE:
 
@@ -218,7 +241,7 @@ After successful authentication, Kali should show:
 secure-cli>
 ```
 
-## 9. Available Commands
+## 11. Available Commands
 
 The implementation uses an allowlist:
 
@@ -277,7 +300,7 @@ Command output
 Kali server
 ```
 
-## 10. Build the Windows EXE
+## 12. Build the Windows EXE
 
 Install PyInstaller:
 
@@ -297,7 +320,7 @@ Final executable:
 dist\client.exe
 ```
 
-## 11. Windows Final Lab Machine
+## 13. Windows Final Lab Machine
 
 For the authorized lab demonstration, the final Windows machine only needs:
 
@@ -316,7 +339,7 @@ Python
 PyInstaller
 ```
 
-## 12. Logging
+## 14. Logging
 
 Kali server log:
 
@@ -330,7 +353,7 @@ Windows client log:
 client.log
 ```
 
-## 13. Troubleshooting
+## 15. Troubleshooting
 
 Check Kali IP:
 
@@ -374,7 +397,7 @@ If required:
 sudo ufw allow 8443/tcp
 ```
 
-## 14. Security Design
+## 16. Security Design
 
 This project demonstrates:
 
@@ -390,7 +413,7 @@ This project demonstrates:
 
 The implementation intentionally checks requested commands against a predefined allowlist instead of accepting arbitrary shell input.
 
-## 15. Security Notes
+## 17. Security Notes
 
 ### TLS Certificate
 
@@ -411,52 +434,6 @@ client.log
 server.log
 ```
 
-## 16. Recommended `.gitignore`
-
-```gitignore
-__pycache__/
-*.pyc
-server.key
-*.log
-build/
-dist/
-*.spec
-.env
-```
-
-## 17. Source Code
-
-### Server
-
-Complete `server.py`:
-
-https://github.com/arthghori/Remote-CLI/blob/main/server.py
-
-### Client
-
-Complete `client.py`:
-
-https://github.com/arthghori/Remote-CLI/blob/main/client.py
-
-## 18. Educational Scope
-
-```text
-Networking
-   ↓
-TCP sockets
-   ↓
-TLS encryption
-   ↓
-Authentication
-   ↓
-Allowlisted commands
-   ↓
-Output handling
-   ↓
-Logging
-   ↓
-Executable packaging
-```
 ## License
 
 Add the license that matches your project requirements before publishing or distributing the repository.
