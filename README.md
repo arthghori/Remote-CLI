@@ -61,7 +61,7 @@ The Windows client is intentionally restricted to predefined commands and does n
 
 ## Output
 
-Example session showing the Kali server and Windows client in action — authentication, `dir`, and `whoami` executed through the allowlisted command flow:
+Example session showing the Kali server and Windows client in action authentication, `dir`, and `whoami` executed through the command flow:
 
 ![Secure Remote CLI output](https://github.com/user-attachments/assets/9f5e433d-c1ee-4f9d-8c02-e9d998a23cfd)
 
