@@ -1,7 +1,7 @@
 # Secure Remote CLI
 
 A small educational remote CLI project demonstrating **TCP sockets, TLS encryption, token authentication, allowlisted Windows commands, logging, and PyInstaller packaging**.
-
+</br>
 > **Educational Purpose Only:** This project is created strictly for educational purposes and authorized cybersecurity testing on systems you own or have explicit permission to use.
 
 ## Project Overview
@@ -35,6 +35,12 @@ The Windows client is intentionally restricted to predefined commands and does n
 - **Repository:** https://github.com/arthghori/Remote-CLI
 - **Server:** https://github.com/arthghori/Remote-CLI/blob/main/server.py
 - **Client:** https://github.com/arthghori/Remote-CLI/blob/main/client.py
+
+## Output
+
+Example session showing the Kali server and Windows client in action — authentication, `dir`, and `whoami` executed through the allowlisted command flow:
+
+![Secure Remote CLI output](https://github.com/user-attachments/assets/9f5e433d-c1ee-4f9d-8c02-e9d998a23cfd)
 
 ## Project Structure
 
@@ -451,13 +457,6 @@ Logging
    ↓
 Executable packaging
 ```
-
-## 19. Output
-
-Example session showing the Kali server and Windows client in action — authentication, `dir`, and `whoami` executed through the allowlisted command flow:
-
-![Secure Remote CLI output](https://github.com/user-attachments/assets/9f5e433d-c1ee-4f9d-8c02-e9d998a23cfd)
-
 ## License
 
 Add the license that matches your project requirements before publishing or distributing the repository.
