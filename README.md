@@ -3,7 +3,7 @@
 A small educational remote CLI project demonstrating **TCP sockets, TLS encryption, token authentication, allowlisted Windows commands, logging, and PyInstaller packaging**.
 </br></br>
 > **Educational Purpose Only:** This project is created strictly for educational purposes and authorized cybersecurity testing on systems you own or have explicit permission to use.
-
+ 
 ## Project Overview
 
 | Component | Details |
