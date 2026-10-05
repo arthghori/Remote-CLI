@@ -16,7 +16,7 @@ A small educational remote CLI project demonstrating **TCP sockets, TLS encrypti
 | Commands | Allowlisted only |
 | Windows deployment | `client.exe` |
 
-The Windows client is intentionally restricted to predefined commands and does not provide an arbitrary command shell, persistence, credential theft, or security-tool evasion. fileciteturn0file0L1-L9
+The Windows client is intentionally restricted to predefined commands and does not provide an arbitrary command shell, persistence, credential theft, or security-tool evasion.
 
 ## Architecture
 
@@ -382,7 +382,7 @@ This project demonstrates:
 - Windows executable packaging
 - Kali Linux server deployment
 
-The implementation intentionally checks requested commands against a predefined allowlist instead of accepting arbitrary shell input. fileciteturn0file0L1356-L1369
+The implementation intentionally checks requested commands against a predefined allowlist instead of accepting arbitrary shell input.
 
 ## 15. Security Notes
 
@@ -451,6 +451,12 @@ Logging
    ↓
 Executable packaging
 ```
+
+## 19. Output
+
+Example session showing the Kali server and Windows client in action — authentication, `dir`, and `whoami` executed through the allowlisted command flow:
+
+![Secure Remote CLI output](<img width="958" height="445" alt="Screenshot 2026-09-27 225050" src="https://github.com/user-attachments/assets/36a7da9d-af6e-4326-97df-a2056e3f6e99" />)
 
 > **Educational Purpose Only:** Use this project only on systems you own or where you have explicit authorization to perform testing. Do not use it for unauthorized access, persistence, credential theft, evasion, or other harmful activity.
 
