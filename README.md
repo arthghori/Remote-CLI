@@ -458,8 +458,6 @@ Example session showing the Kali server and Windows client in action — authent
 
 ![Secure Remote CLI output](https://github.com/user-attachments/assets/9f5e433d-c1ee-4f9d-8c02-e9d998a23cfd)
 
-> **Educational Purpose Only:** Use this project only on systems you own or where you have explicit authorization to perform testing. Do not use it for unauthorized access, persistence, credential theft, evasion, or other harmful activity.
-
 ## License
 
 Add the license that matches your project requirements before publishing or distributing the repository.
