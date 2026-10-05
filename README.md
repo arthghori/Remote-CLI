@@ -456,7 +456,7 @@ Executable packaging
 
 Example session showing the Kali server and Windows client in action — authentication, `dir`, and `whoami` executed through the allowlisted command flow:
 
-![Secure Remote CLI output](<img width="958" height="445" alt="Screenshot 2026-09-27 225050" src="https://github.com/user-attachments/assets/36a7da9d-af6e-4326-97df-a2056e3f6e99"/>)
+![Secure Remote CLI output](https://github.com/user-attachments/assets/9f5e433d-c1ee-4f9d-8c02-e9d998a23cfd)
 
 > **Educational Purpose Only:** Use this project only on systems you own or where you have explicit authorization to perform testing. Do not use it for unauthorized access, persistence, credential theft, evasion, or other harmful activity.
 
